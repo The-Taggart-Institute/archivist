@@ -1,0 +1,8 @@
+{
+    "discord_token": "CHANGEME",
+    "wallabag_url": "CHANGEME",
+    "client_id": "CHANGEME",
+    "client_secret": "CHANGEME",
+    "wallabag_username": "CHANGEME",
+    "wallabag_password": "CHANGEME"
+}
