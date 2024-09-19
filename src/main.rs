@@ -1,4 +1,8 @@
 use poise::serenity_prelude as serenity;
+#[macro_use] extern crate log;
+extern crate simplelog;
+
+use simplelog::*;
 
 mod wallabag;
 use wallabag::add_article;
@@ -32,6 +36,7 @@ async fn archive(ctx: Context<'_>,
 ) -> Result<(), Error> {
     let config = load_config().unwrap();
     let tags = tags.unwrap_or(String::new());
+    let username = ctx.author().name.as_str();
     match add_article(&url, &tags, &config).await {
         Ok(_) => {
             let mut reply = format!("Added {url}");
@@ -41,11 +46,13 @@ async fn archive(ctx: Context<'_>,
                     reply.push_str(format!("`{t}` ").as_str());
                 }
             }
+            warn!("{username} archived {url} with tags: {tags}");
             ctx.say(reply).await?;
             Ok(())
         },
         Err(_) => {
-            ctx.say("Uh oh").await?;
+            error!("{username} could not archive {url} with tags: {tags}");
+            ctx.say("Sorry, couldn't add that link! 😅").await?;
             Ok(())
 
         }
@@ -61,7 +68,15 @@ pub async fn register(ctx: Context<'_>) -> Result<(), Error> {
 
 #[tokio::main]
 async fn main() {
+    // Initialize Logger
+    CombinedLogger::init(
+        vec![
+            TermLogger::new(LevelFilter::Warn, Config::default(), TerminalMode::Mixed, ColorChoice::Auto),
+        ]
+    ).unwrap();
     let config = load_config().unwrap();
+
+    warn!("Config loaded: {:?}", config);
     let token = config.discord_token;
     let intents = serenity::GatewayIntents::non_privileged();
 
