@@ -1,0 +1,7 @@
+services:
+  archivist:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: archivist:latest
+    
