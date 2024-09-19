@@ -2,6 +2,8 @@
 name = "archivist"
 version = "0.1.0"
 edition = "2021"
+description = "A Discord bot to easily send URLs from Discord to Wallabag"
+license = "MIT"
 
 [dependencies]
 log = "0.4.22"
