@@ -7,6 +7,7 @@ const CONFIG_FILENAME: &str = "config.json";
 
 #[derive(Deserialize, Debug)]
 pub struct Config {
+    pub discord_token: String,
     pub wallabag_url: String,
     pub client_id: String,
     pub client_secret: String,
