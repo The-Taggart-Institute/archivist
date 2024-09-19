@@ -13,7 +13,7 @@ This Discord bot is designed to work in conjunction with [Wallabag](wallabag.it/
 3. Create a Wallabag account for use with this app. Save the client ID, secret, URL, username, and password.
 4. Copy `config.example.json` to `config.json`.
 5. Fill in the `config.json` details with the saved information.
-6. `cargo run` for the Rustheads, or use `docker compose up -d` with the associated Dockerfile.
+6. `cargo install --path .` and then `archivist` in this directory for the Rustaceans, or use `docker compose up -d` with the associated Dockerfile.
 7. Use the Discord app install link on a server of your choosing.
 8. DM `@The Archivist register`, the regiser the commands.
 9. Get Archivin'!
