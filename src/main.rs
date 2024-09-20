@@ -50,9 +50,9 @@ async fn archive(ctx: Context<'_>,
             ctx.say(reply).await?;
             Ok(())
         },
-        Err(_) => {
+        Err(e) => {
             error!("{username} could not archive {url} with tags: {tags}");
-            ctx.say("Sorry, couldn't add that link! 😅").await?;
+            ctx.say(e).await?;
             Ok(())
 
         }
