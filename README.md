@@ -4,7 +4,7 @@
 
 Discord Bot for archiving links to a Wallabag RSS feed.
 
-This Discord bot is designed to work in conjunction with [Wallabag](wallabag.it/), either the service or a self-hosted instance. Using the Wallabag API, it will store URLs from Discord messages for better archiving of resources.
+This Discord bot is designed to work in conjunction with [Wallabag](https://wallabag.it/), either the service or a self-hosted instance. Using the Wallabag API, it will store URLs from Discord messages for better archiving of resources.
 
 ## Installation
 
