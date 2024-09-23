@@ -15,7 +15,7 @@ This Discord bot is designed to work in conjunction with [Wallabag](wallabag.it/
 5. Fill in the `config.json` details with the saved information.
 6. `cargo install --path .` and then `archivist` in this directory for the Rustaceans, or use `docker compose up -d` with the associated Dockerfile.
 7. Use the Discord app install link on a server of your choosing.
-8. DM `@The Archivist register`, the regiser the commands.
+8. DM `@The Archivist register`, then regiser the commands.
 9. Get Archivin'!
 
 ## Usage
